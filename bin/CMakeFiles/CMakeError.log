@@ -1,0 +1,169 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a46b6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a46b6.dir/build.make CMakeFiles/cmTC_a46b6.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a46b6.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_a46b6.dir/CheckSymbolExists.c.o   -c /home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a46b6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a46b6.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a46b6.dir/CheckSymbolExists.c.o  -o cmTC_a46b6 
+CMakeFiles/cmTC_a46b6.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_a46b6.dir/build.make:97: recipe for target 'cmTC_a46b6' failed
+make[1]: *** [cmTC_a46b6] Error 1
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a46b6/fast' failed
+make: *** [cmTC_a46b6/fast] Error 2
+
+File /home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a4713/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a4713.dir/build.make CMakeFiles/cmTC_a4713.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a4713.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_a4713.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a4713
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4713.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_a4713.dir/CheckFunctionExists.c.o  -o cmTC_a4713 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_a4713.dir/build.make:97: recipe for target 'cmTC_a4713' failed
+make[1]: *** [cmTC_a4713] Error 1
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a4713/fast' failed
+make: *** [cmTC_a4713/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c0d73/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c0d73.dir/build.make CMakeFiles/cmTC_c0d73.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c0d73.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c0d73.dir/CheckSymbolExists.c.o   -c /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c0d73
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0d73.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_c0d73.dir/CheckSymbolExists.c.o  -o cmTC_c0d73 
+CMakeFiles/cmTC_c0d73.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c0d73.dir/build.make:97: recipe for target 'cmTC_c0d73' failed
+make[1]: *** [cmTC_c0d73] Error 1
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c0d73/fast' failed
+make: *** [cmTC_c0d73/fast] Error 2
+
+File /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_20afe/fast"
+/usr/bin/make -f CMakeFiles/cmTC_20afe.dir/build.make CMakeFiles/cmTC_20afe.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_20afe.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_20afe.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_20afe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20afe.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_20afe.dir/CheckFunctionExists.c.o  -o cmTC_20afe -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_20afe.dir/build.make:97: recipe for target 'cmTC_20afe' failed
+make[1]: *** [cmTC_20afe] Error 1
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_20afe/fast' failed
+make: *** [cmTC_20afe/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_277cb/fast"
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_277cb.dir/build.make CMakeFiles/cmTC_277cb.dir/build
+make[2]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_277cb.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_277cb.dir/CheckSymbolExists.c.o   -c /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_277cb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_277cb.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_277cb.dir/CheckSymbolExists.c.o  -o cmTC_277cb 
+CMakeFiles/cmTC_277cb.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_277cb.dir/build.make:97: recipe for target 'cmTC_277cb' failed
+make[2]: *** [cmTC_277cb] Error 1
+make[2]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_277cb/fast' failed
+make[1]: *** [cmTC_277cb/fast] Error 2
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+File /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fc1b0/fast"
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_fc1b0.dir/build.make CMakeFiles/cmTC_fc1b0.dir/build
+make[2]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fc1b0.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_fc1b0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fc1b0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fc1b0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_fc1b0.dir/CheckFunctionExists.c.o  -o cmTC_fc1b0 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_fc1b0.dir/build.make:97: recipe for target 'cmTC_fc1b0' failed
+make[2]: *** [cmTC_fc1b0] Error 1
+make[2]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fc1b0/fast' failed
+make[1]: *** [cmTC_fc1b0/fast] Error 2
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+

@@ -1,0 +1,176 @@
+Determining if the function dgemm_ exists passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a52ed/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a52ed.dir/build.make CMakeFiles/cmTC_a52ed.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a52ed.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=dgemm_   -o CMakeFiles/cmTC_a52ed.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a52ed
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a52ed.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=dgemm_    -rdynamic CMakeFiles/cmTC_a52ed.dir/CheckFunctionExists.c.o  -o cmTC_a52ed /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so 
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cfffa/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cfffa.dir/build.make CMakeFiles/cmTC_cfffa.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cfffa.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_cfffa.dir/CheckIncludeFile.c.o   -c /home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_cfffa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cfffa.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_cfffa.dir/CheckIncludeFile.c.o  -o cmTC_cfffa 
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3c6fa/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3c6fa.dir/build.make CMakeFiles/cmTC_3c6fa.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3c6fa.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_3c6fa.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3c6fa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c6fa.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_3c6fa.dir/CheckFunctionExists.c.o  -o cmTC_3c6fa -lpthread 
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function cheev_ exists passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_89f40/fast"
+/usr/bin/make -f CMakeFiles/cmTC_89f40.dir/build.make CMakeFiles/cmTC_89f40.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89f40.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_   -o CMakeFiles/cmTC_89f40.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_89f40
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89f40.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_    -rdynamic CMakeFiles/cmTC_89f40.dir/CheckFunctionExists.c.o  -o cmTC_89f40 /usr/lib/x86_64-linux-gnu/liblapack.so /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so 
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function dgemm_ exists passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3df0d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3df0d.dir/build.make CMakeFiles/cmTC_3df0d.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3df0d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=dgemm_   -o CMakeFiles/cmTC_3df0d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3df0d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3df0d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=dgemm_    -rdynamic CMakeFiles/cmTC_3df0d.dir/CheckFunctionExists.c.o  -o cmTC_3df0d /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so 
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f1010/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f1010.dir/build.make CMakeFiles/cmTC_f1010.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1010.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_f1010.dir/CheckIncludeFile.c.o   -c /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f1010
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1010.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_f1010.dir/CheckIncludeFile.c.o  -o cmTC_f1010 
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_14353/fast"
+/usr/bin/make -f CMakeFiles/cmTC_14353.dir/build.make CMakeFiles/cmTC_14353.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_14353.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_14353.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_14353
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14353.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_14353.dir/CheckFunctionExists.c.o  -o cmTC_14353 -lpthread 
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function cheev_ exists passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a1787/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a1787.dir/build.make CMakeFiles/cmTC_a1787.dir/build
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a1787.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_   -o CMakeFiles/cmTC_a1787.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a1787
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1787.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_    -rdynamic CMakeFiles/cmTC_a1787.dir/CheckFunctionExists.c.o  -o cmTC_a1787 /usr/lib/x86_64-linux-gnu/liblapack.so /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so 
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function dgemm_ exists passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4b17d/fast"
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_4b17d.dir/build.make CMakeFiles/cmTC_4b17d.dir/build
+make[2]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4b17d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=dgemm_   -o CMakeFiles/cmTC_4b17d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4b17d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b17d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=dgemm_    -rdynamic CMakeFiles/cmTC_4b17d.dir/CheckFunctionExists.c.o  -o cmTC_4b17d /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so 
+make[2]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_45c56/fast"
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_45c56.dir/build.make CMakeFiles/cmTC_45c56.dir/build
+make[2]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_45c56.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_45c56.dir/CheckIncludeFile.c.o   -c /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_45c56
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45c56.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_45c56.dir/CheckIncludeFile.c.o  -o cmTC_45c56 
+make[2]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_42713/fast"
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_42713.dir/build.make CMakeFiles/cmTC_42713.dir/build
+make[2]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_42713.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_42713.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_42713
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42713.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_42713.dir/CheckFunctionExists.c.o  -o cmTC_42713 -lpthread 
+make[2]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function cheev_ exists passed with the following output:
+Change Dir: /home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_87b18/fast"
+make[1]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_87b18.dir/build.make CMakeFiles/cmTC_87b18.dir/build
+make[2]: Entering directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_87b18.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_   -o CMakeFiles/cmTC_87b18.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_87b18
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87b18.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_    -rdynamic CMakeFiles/cmTC_87b18.dir/CheckFunctionExists.c.o  -o cmTC_87b18 /usr/lib/x86_64-linux-gnu/liblapack.so /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so 
+make[2]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/mbrewster/Desktop/FEM_Prime/bin/CMakeFiles/CMakeTmp'
+
+

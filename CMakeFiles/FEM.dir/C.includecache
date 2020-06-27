@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mbrewster/Desktop/FEM_Prime/inc/matrix_utils.h
+
+/home/mbrewster/Desktop/FEM_Prime/src/fem.c
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+math.h
+-
+lapacke.h
+-
+../inc/matrix_utils.h
+/home/mbrewster/Desktop/FEM_Prime/inc/matrix_utils.h
+
+/home/mbrewster/Desktop/FEM_Prime/src/matrix_utils.c
+stdio.h
+-
+stdlib.h
+-
+../inc/matrix_utils.h
+/home/mbrewster/Desktop/FEM_Prime/inc/matrix_utils.h
+

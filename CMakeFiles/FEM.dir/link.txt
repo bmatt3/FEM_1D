@@ -1,0 +1,1 @@
+/usr/bin/cc   -O3 -fopt-info-vec-all -rdynamic CMakeFiles/FEM.dir/src/matrix_utils.c.o CMakeFiles/FEM.dir/src/fem.c.o  -o bin/FEM -llapacke -llapack -lblas -lm 
