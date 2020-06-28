@@ -6,6 +6,7 @@
 
 void PrintMatrix(double *A, unsigned int m, unsigned int n);
 void FillMatrixDiagonal(double *A, unsigned int m, unsigned int n, unsigned int k, double val);
+void FillVector(double *A, unsigned int m, double val);
 void PrintVector(double *A, unsigned int m);
 
 #endif 

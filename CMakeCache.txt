@@ -26,6 +26,9 @@ BLAS_goto2_LIBRARY:FILEPATH=BLAS_goto2_LIBRARY-NOTFOUND
 //Path to a library.
 BLAS_openblas_LIBRARY:FILEPATH=BLAS_openblas_LIBRARY-NOTFOUND
 
+//The directory containing a CMake configuration file for CBLAS.
+CBLAS_DIR:PATH=CBLAS_DIR-NOTFOUND
+
 //Netlib BLAS include header cblas.h
 CBLAS_INCLUDE_DIRS:PATH=/usr/include/x86_64-linux-gnu
 

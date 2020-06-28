@@ -13,11 +13,11 @@ stdio.h
 -
 stdlib.h
 -
-stdint.h
--
 math.h
 -
 lapacke.h
+-
+time.h
 -
 ../inc/matrix_utils.h
 /home/mbrewster/Desktop/FEM_Prime/inc/matrix_utils.h

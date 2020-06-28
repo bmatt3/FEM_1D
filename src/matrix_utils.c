@@ -28,12 +28,18 @@ void FillMatrixDiagonal(double *A, unsigned int m, unsigned int n, unsigned int 
   }
 }
 
+void FillVector(double *A, unsigned int m, double val) {
+  unsigned int i = 0;
+  for (i = 0; i < m ; i++) {
+     MATRIX_ELEMENT(A,m,1,i,1) = val;
+  }
+}
+
 void PrintVector(double *A, unsigned int m) {
    unsigned int i = 0;
-   for(i = 1; i <= m; i++) {
-      printf("%d \t %f\n", i-1, A[i-1]);
+   for(i = 0; i < m; i++) {
+      printf("%d \t %f\n", i, MATRIX_ELEMENT(A,m,0,i,0));
    }
    printf("\n");
 }
-
 
