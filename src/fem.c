@@ -95,7 +95,6 @@ int main(int argc, char *argv[])
   printf("dposv_run time = %f\n\n", ((double) (end - start)) / CLOCKS_PER_SEC);
 
   if (info != 0) {
-     
      fprintf(stderr,"LAPACK ERROR : ( %d ) ", info);
      if (info < 0) {
        fprintf(stderr, " illegal value of one or more");
