@@ -88,7 +88,8 @@ int main(int argc, char *argv[])
   //end = clock();
   //printf("dgesv_run time = %f\n\n", ((double) (end - start)) / CLOCKS_PER_SEC);
   
-  //Double Precision, Symmetric Positive Definite Matrix Solver.
+  //Double Precision, Symmetric Positive Definite Matrix Solver.  
+  //Cholskey Decomposition + Linear Solve =( (1/3)*O(n^3) + O(n^2)) Runtime)
   start = clock();
     info = LAPACKE_dposv(LAPACK_COL_MAJOR, 'U', n, nrhs, stiff, lda, lv, ldb);
   end = clock();
@@ -118,8 +119,7 @@ int main(int argc, char *argv[])
 //////////////////////////////////////////////////////////////////////////////
 //Computing uniformly spaced nodal values on the x-axis,
 //And allocating them to the nodes array.
-void InitNodes(double *nodes, double a, double b, unsigned int num_nodes) 
-{
+void InitNodes(double *nodes, double a, double b, unsigned int num_nodes) {
     unsigned int i = 0;   
     double h = (b-a)/((double) num_nodes);
     nodes[0] = a;
@@ -130,15 +130,13 @@ void InitNodes(double *nodes, double a, double b, unsigned int num_nodes)
 /////////////////////////////////////////////////////////////////////////////
 //Using the Galerkin Method to assemble the Mass Matrix.
 //Using Simpson Method for Integration Scheme.
-
 void StiffMatrix_Assembler(double *stiff, double *nodes, unsigned int rows, unsigned int cols)
 {
   unsigned int i = 0;
   double       h = nodes[1] - nodes[0];
-  
-  FillMatrixDiagonal(stiff, rows, cols,  0, (2.0/h));
-  FillMatrixDiagonal(stiff, rows, cols,  1, (-1.0/h));
-  FillMatrixDiagonal(stiff, rows, cols, -1, (-1.0/h));
+  FillMatrixDiagonal(stiff, rows, cols,  0, (2.0/h));   //Writing To Main Diagonal.
+  FillMatrixDiagonal(stiff, rows, cols,  1, (-1.0/h));  //Writing To 1st Super-Diagonal.
+  FillMatrixDiagonal(stiff, rows, cols, -1, (-1.0/h));  //Writing To 1st Sub-Diagonal.
 }
 ///////////////////////////////////////////////////////////////////////////
 //Using the Galerkin Method to Assemble to Load Vector
@@ -147,7 +145,8 @@ void Load_Vector_Assembler(double *fx, double *nodes, double *lv, \
 {
     unsigned int i = 1;
     double       h = nodes[1] - nodes[0];
-
+     
+    //Filling Load Vector in Column Major Order.
     MATRIX_ELEMENT(lv,num_nodes,1,0,0) = MATRIX_ELEMENT(lv,num_nodes,1,0,0) + (fx[1]*(h/2));
     for(i = 1; i <= (num_nodes-2); i++) {
        MATRIX_ELEMENT(lv,num_nodes,1,i,0) = MATRIX_ELEMENT(lv,num_nodes,1,i,0) + (fx[i+1]*(h));
@@ -158,8 +157,7 @@ void Load_Vector_Assembler(double *fx, double *nodes, double *lv, \
 //Evaluating f(x) at the nodal points.
 double f(double *nodes, double *fx, unsigned int num_nodes) {
    unsigned int i = 0;
-   //emset(fx, 1.00, (M+1)*sizeof(double));
    for(i = 0; i <= (num_nodes-1); i++) {
-       fx[i] = 1;//nodes[i]*sin(nodes[i]);
+       fx[i] = 1.00;
    }
 }
