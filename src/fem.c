@@ -151,7 +151,7 @@ void Load_Vector_Assembler(double *fx, double *nodes, double *lv, \
     for(i = 1; i <= (num_nodes-2); i++) {
        MATRIX_ELEMENT(lv,num_nodes,1,i,0) = MATRIX_ELEMENT(lv,num_nodes,1,i,0) + (fx[i+1]*(h));
     }
-    MATRIX_ELEMENT(lv, num_nodes, 1, num_nodes-1,0) =  MATRIX_ELEMENT(lv,num_nodes,1,num_nodes-1,0) + fx[num_nodes]*(h/2);
+    MATRIX_ELEMENT(lv, num_nodes, 1, num_nodes-1,0) = MATRIX_ELEMENT(lv,num_nodes,1,num_nodes-1,0) + fx[num_nodes]*(h/2);
 }
 //////////////////////////////////////////////////////////////////////////
 //Evaluating f(x) at the nodal points.
