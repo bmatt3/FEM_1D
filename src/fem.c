@@ -55,12 +55,12 @@ int main(int argc, char *argv[])
   double b           = 1.00; //X-Domain End
   double nodes[M+1]  = {0};  //Nodal points on the x-axis.
   double fx[M+1]     = {0};  //f(x) values at nodal points.
-  double lv[N]       = {0};  //LoadVector Values.
+  double lv[M]       = {0};  //LoadVector Values.
   double stiff[M*N]  = {0};  //Stiffness Matrix.
 
   lapack_int n       = M;   //Order of Matrix A.
   lapack_int lda     = M;   //Leading Dimension Matrix A.
-  lapack_int ipiv[N] = {0}; //Pivot Array. Entries Initialized to 0.
+  lapack_int ipiv[M] = {0}; //Pivot Array. Entries Initialized to 0.
   lapack_int nrhs    = 1;   //Number of right hand sides.
   lapack_int ldb     = M;   //Leading Dimension of B.
   lapack_int info    = 0;   //Return Value.
