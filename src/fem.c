@@ -75,6 +75,7 @@ int main(int argc, char *argv[])
   //Loop Counter Variable.
   int i = 0;
 
+  //Sum of all bytes of memory used by variables.
   size_t mem = sizeof(nodes) + sizeof(fx) + sizeof(lv) + sizeof(stiff);
   mem += sizeof(ipiv) + 5*sizeof(lapack_int) + 2*sizeof(double); 
   mem += 2*sizeof(time_t) + sizeof(int);
