@@ -15,13 +15,14 @@
 #include "../inc/matrix_utils.h"
 
 //Defining Constants for Basis Function Construction.
-#define NUM_NODES   7 //Will be Evaluated as N by the code
+#define NUM_NODES   500 //Will be Evaluated as N by the code
 #define M       (NUM_NODES-1)
 #define N       (NUM_NODES-1)
 
 //Code Return Values.
-#define FAILURE     1
-#define SUCCESS     0
+#define FAILURE_LAPACKE     -1
+#define FAILURE_BAD_EXIT    -2
+#define SUCCESS              0
 
 //Defining Column Major Order Preprocessor Macros.
 #define MATRIX_IDX(n,i,j) j*n + i
@@ -38,14 +39,16 @@ void StiffMatrix_Assembler(double *stiff, double *nodes, unsigned int rows, unsi
 void Load_Vector_Assembler(double *fx, double *nodes, \
      double *lv,unsigned int num_nodes);
 
-//Preprocessro Matrix Util Function Declarations.
+//Preprocessor Matrix Util Function Declarations.
 void PrintVector(double *A, unsigned int m);
 
-//void PrintMatrix(double *A, unsigned int m, unsigned int n);
+#ifdef DEBUG
+void PrintMatrix(double *A, unsigned int m, unsigned int n);
+void PrintVector(double *A, unsigned int m);
+#endif 
 
 void FillMatrixDiagonal(double *A, unsigned int m, unsigned int n, \
      unsigned int k, double val);
-
 ////////////////////////////////////////////////////////////////////////////////
 
 //CODE START:
@@ -69,33 +72,25 @@ int main(int argc, char *argv[])
   time_t start; 
   time_t end; 
  
-  size_t memory_usage = sizeof(nodes) + sizeof(fx) + sizeof(lv) + sizeof(stiff);
-  memory_usage += sizeof(ipiv) + 6*sizeof(int) + 2*sizeof(double) + sizeof(size_t);
-  memory_usage += 2*sizeof(clock_t);
+  //Loop Counter Variable.
+  int i = 0;
 
-  printf("RAM USAGE = %0.1f (KB)\n",  memory_usage/1.0e3);
-  printf("RAM USAGE = %0.1f (MB)\n", memory_usage/1.0e6);
-  printf("RAM USAGE = %0.1f (GB)\n", memory_usage/1.0e9);
+  size_t mem = sizeof(nodes) + sizeof(fx) + sizeof(lv) + sizeof(stiff);
+  mem += sizeof(ipiv) + 5*sizeof(lapack_int) + 2*sizeof(double); 
+  mem += 2*sizeof(time_t) + sizeof(int);
   
   InitNodes(nodes, a, b, M+1); 
   f(nodes, fx, M+1); 
   StiffMatrix_Assembler(stiff, nodes, M, N);
   Load_Vector_Assembler(fx, nodes, lv, M);
 
-  //Double Precision, Generalized Matrix Solver
-  //start = clock();
-  //  info = LAPACKE_dgesv(LAPACK_COL_MAJOR, n, nrhs, stiff, lda, ipiv, lv, ldb);
-  //end = clock();
-  //printf("dgesv_run time = %f\n\n", ((double) (end - start)) / CLOCKS_PER_SEC);
-  
-  //Double Precision, Symmetric Positive Definite Matrix Solver.
+  //Timing Double Precision Symmetric Positive Definite Matrix Solver.
   start = clock();
     info = LAPACKE_dposv(LAPACK_COL_MAJOR, 'U', n, nrhs, stiff, lda, lv, ldb);
   end = clock();
-  printf("dposv_run time = %f\n\n", ((double) (end - start)) / CLOCKS_PER_SEC);
-
-  if (info != 0) {
-     
+  
+  //Checking Return Value. 
+  if (info != 0) {   
      fprintf(stderr,"LAPACK ERROR : ( %d ) ", info);
      if (info < 0) {
        fprintf(stderr, " illegal value of one or more");
@@ -104,17 +99,35 @@ int main(int argc, char *argv[])
      else {
        fprintf(stderr, " failure in the course of computation.\n");
      }
+     return FAILURE_LAPACKE;
   } 
   else {
+     //On success we write to the solution to disk for post processing.
      FILE *fp = fopen("./data/Solution.dat", "w");
      fprintf(fp, "%f, %f\n",  0.00, 0.00);
-     for(info = 0; info < M; info++) {
-       fprintf(fp, "%f, %f\n",  nodes[info+1], lv[info]);
+     for(i = 0; i < M; i++) {
+       fprintf(fp, "%f, %f\n",  nodes[i+1], lv[i]);
      }   
      fprintf(fp, "%f, %f\n",  1.00, 0.00);
      fclose(fp); 
+
+     //Printing Total Memory Usage By Program
+     if (mem < pow(1024,2)) {
+        printf("Program Memory Utilization = %0.3f (KB)\n", (double) (mem/(1024)));
+     }
+     else if (mem < pow(1024,3)) {
+        printf("Program Memory Utilization = %0.3f (MB)\n", (double) (mem/(pow(1024,2))));
+     }
+     else {
+        printf("Program Memory Utilization = %0.3f (GB)\n", (double) (mem/pow(1024,3)));
+     }
+
+     //Printing Symmetric Positive Matrix Algorithm Runtime.
+     printf("dposv_run time = %f\n\n", ((double) (end - start)) / CLOCKS_PER_SEC);
+     return SUCCESS;
   }
-  return SUCCESS;
+  //We should never get here. But we will error handle for safety.
+  return FAILURE_BAD_EXIT;
 }
 //////////////////////////////////////////////////////////////////////////////
 //Computing uniformly spaced nodal values on the x-axis,
@@ -127,6 +140,12 @@ void InitNodes(double *nodes, double a, double b, unsigned int num_nodes)
     for(i = 1; i <= num_nodes+1; i++) {
        nodes[i] = nodes[i-1] + h;
     }
+
+    #ifdef DEBUG 
+    printf("Nodal Values:");
+    PrintVector(nodes, num_nodes);
+    printf("\n\n");
+    #endif 
 }
 /////////////////////////////////////////////////////////////////////////////
 //Using the Galerkin Method to assemble the Mass Matrix.
@@ -140,27 +159,44 @@ void StiffMatrix_Assembler(double *stiff, double *nodes, unsigned int rows, unsi
   FillMatrixDiagonal(stiff, rows, cols,  0, (2.0/h));
   FillMatrixDiagonal(stiff, rows, cols,  1, (-1.0/h));
   FillMatrixDiagonal(stiff, rows, cols, -1, (-1.0/h));
+
+  #ifdef DEBUG
+  printf("Printing Stiffness Matrix Values (Column Major Order):\n");
+  PrintMatrix(stiff, rows, cols);
+  printf("\n\n");
+  #endif
 }
 ///////////////////////////////////////////////////////////////////////////
 //Using the Galerkin Method to Assemble to Load Vector
 void Load_Vector_Assembler(double *fx, double *nodes, double *lv, \
      unsigned int num_nodes)
 {
-    unsigned int i = 1;
-    double       h = nodes[1] - nodes[0];
+  unsigned int i = 1;
+  double       h = nodes[1] - nodes[0];
 
-    MATRIX_ELEMENT(lv,num_nodes,1,0,0) = MATRIX_ELEMENT(lv,num_nodes,1,0,0) + (fx[1]*(h/2));
-    for(i = 1; i <= (num_nodes-2); i++) {
-       MATRIX_ELEMENT(lv,num_nodes,1,i,0) = MATRIX_ELEMENT(lv,num_nodes,1,i,0) + (fx[i+1]*(h));
-    }
-    MATRIX_ELEMENT(lv, num_nodes, 1, num_nodes-1,0) =  MATRIX_ELEMENT(lv,num_nodes,1,num_nodes-1,0) + fx[num_nodes]*(h/2);
+  MATRIX_ELEMENT(lv,num_nodes,1,0,0) = MATRIX_ELEMENT(lv,num_nodes,1,0,0) + (fx[1]*(h/2));
+  for(i = 1; i <= (num_nodes-2); i++) {
+     MATRIX_ELEMENT(lv,num_nodes,1,i,0) = MATRIX_ELEMENT(lv,num_nodes,1,i,0) + (fx[i+1]*(h));
+  }
+  MATRIX_ELEMENT(lv, num_nodes, 1, num_nodes-1,0) =  MATRIX_ELEMENT(lv,num_nodes,1,num_nodes-1,0) + fx[num_nodes]*(h/2);
+
+  #ifdef DEBUG
+  printf("Load Vector Values:\n");
+  PrintVector(lv, num_nodes);
+  printf("\n\n");
+  #endif
 }
 //////////////////////////////////////////////////////////////////////////
 //Evaluating f(x) at the nodal points.
 double f(double *nodes, double *fx, unsigned int num_nodes) {
    unsigned int i = 0;
-   //emset(fx, 1.00, (M+1)*sizeof(double));
    for(i = 0; i <= (num_nodes-1); i++) {
-       fx[i] = 1;//nodes[i]*sin(nodes[i]);
+       fx[i] = nodes[i]*sin(nodes[i]);
    }
+
+   #ifdef DEBUG
+   printf("f(x) values at nodal points: ");
+   PrintVector(fx, num_nodes);
+   printf("\n\n");
+   #endif 
 }
