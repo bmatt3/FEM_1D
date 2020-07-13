@@ -114,13 +114,13 @@ int main(int argc, char *argv[])
 
      //Printing Total Memory Usage By Program
      if (mem < pow(1024,2)) {
-        printf("Program Memory Utilization = %0.3f (KB)\n", (double) (mem/(1024)));
+        printf("Program Memory Utilization = %0.3f (KiB)\n", (double) (mem/(1024)));
      }
      else if (mem < pow(1024,3)) {
-        printf("Program Memory Utilization = %0.3f (MB)\n", (double) (mem/(pow(1024,2))));
+        printf("Program Memory Utilization = %0.3f (MiB)\n", (double) (mem/(pow(1024,2))));
      }
      else {
-        printf("Program Memory Utilization = %0.3f (GB)\n", (double) (mem/pow(1024,3)));
+        printf("Program Memory Utilization = %0.3f (GiB)\n", (double) (mem/pow(1024,3)));
      }
 
      //Printing Symmetric Positive Matrix Algorithm Runtime.
